@@ -26,6 +26,19 @@ function CurrentDisplay()
     const [unitState,setUnit]=useContext(unitCon)
 
 
+    function changeToF()
+    {
+        console.log('changing temp from C to F',data.temp)
+        let F = ((data.temp) * (9/5)) + 32
+        setdata((prev)=>({...prev,temp:F.toFixed(2)}));
+    }
+    function changeToC()
+    {
+        console.log('changing temp from F to C')
+        let C = (data.temp-32)*(5/9)
+        setdata((prev)=>({...prev,temp:C.toFixed(2)}));
+    }
+
    return <>
    <div class='flex flex-col justify-center items-center h-full gap-3'>
 
@@ -46,6 +59,7 @@ function CurrentDisplay()
             setCbtnBG('bg-blue-950')
             setFBtnTxtClr('text-gray-300')
             setFbtnBG('bg-neutral-600')
+            changeToC()
 
         }} className={` ${CBtnTxtClr} ${CbtnBG} h-full w-1/2 rounded-l-2xl`}>°C</button>
 
@@ -56,6 +70,8 @@ function CurrentDisplay()
             setCbtnBG('bg-neutral-600')
             setFBtnTxtClr('text-blue-400')
             setFbtnBG('bg-blue-950')
+            changeToF();
+            // console.log()
         }} 
         className={`${FBtnTxtClr} ${FbtnBG} h-full w-1/2 rounded-r-2xl`}>°F</button>
     </div>
