@@ -31,12 +31,38 @@ function CurrentDisplay()
         console.log('changing temp from C to F',data.temp)
         let F = ((data.temp) * (9/5)) + 32
         setdata((prev)=>({...prev,temp:F.toFixed(2)}));
+         F = ((data.day1Temp) * (9/5)) + 32
+        setdata((prev)=>({...prev,day1Temp:F.toFixed(2)}));
+         F = ((data.day2Temp) * (9/5)) + 32
+        setdata((prev)=>({...prev,day2Temp:F.toFixed(2)}));
+         F = ((data.day3Temp) * (9/5)) + 32
+        setdata((prev)=>({...prev,day3Temp:F.toFixed(2)}));
+         F = ((data.day4Temp) * (9/5)) + 32
+        setdata((prev)=>({...prev,day4Temp:F.toFixed(2)}));
+         F = ((data.day5Temp) * (9/5)) + 32
+        setdata((prev)=>({...prev,day5Temp:F.toFixed(2)}));
+         F = ((data.feelliketemp) * (9/5)) + 32
+        setdata((prev)=>({...prev,feelliketemp:F.toFixed(2)}));
+        // feelliketemp
+
     }
     function changeToC()
     {
         console.log('changing temp from F to C')
         let C = (data.temp-32)*(5/9)
         setdata((prev)=>({...prev,temp:C.toFixed(2)}));
+        C = (data.day1Temp-32)*(5/9)
+        setdata((prev)=>({...prev,day1Temp:C.toFixed(2)}));
+        C = (data.day2Temp-32)*(5/9)
+        setdata((prev)=>({...prev,day2Temp:C.toFixed(2)}));
+        C = (data.day3Temp-32)*(5/9)
+        setdata((prev)=>({...prev,day3Temp:C.toFixed(2)}));
+        C = (data.day4Temp-32)*(5/9)
+        setdata((prev)=>({...prev,day4Temp:C.toFixed(2)}));
+        C = (data.day5Temp-32)*(5/9)
+        setdata((prev)=>({...prev,day5Temp:C.toFixed(2)}));
+        C = (data.feelliketemp-32)*(5/9)
+        setdata((prev)=>({...prev,feelliketemp:C.toFixed(2)}));
     }
 
    return <>
