@@ -17,7 +17,6 @@ function SearchBar()
 
     const apiInACtion=async(cityName)=> {
         console.log(cityEntered);
-        // setUnit('C')
 
 
     let firstResponse = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${cityName}`)
@@ -40,7 +39,7 @@ function SearchBar()
 
 
     // console.log(weatherapidata);
-    console.log('aaj ka sunset ',apiData.current.weather_code,'khatam')
+    // console.log('aaj ka sunset ',apiData.current.weather_code,'khatam')
     // const copyOfAPI = {apiData[0]}
     // const { newcity, newcountry, newtemp, newfeel, mewhumidity, newwind, newsunset, newday1Temp, newday2Temp, newday3Temp, newday4Temp, newday5Temp}= weatherapidata;
     setWeatherapidata((prev)=>({
@@ -78,7 +77,7 @@ function SearchBar()
 
         <div class='w-3/4 h-full'>
             <input 
-            onChange={(e)=>{setCityEntered(e.target.value)}}
+            onChange={(e)=>{setCityEntered(e.target.value) }}
             placeholder="Enter a City" 
             class="bg-neutral-600 h-full w-full rounded-md text-gray-100 text-lg
             font-medium placeholder:text-gray-50 px-3 py-2"/>

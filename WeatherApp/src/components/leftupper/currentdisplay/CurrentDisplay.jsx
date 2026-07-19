@@ -65,6 +65,11 @@ function CurrentDisplay()
     //     setdata((prev)=>({...prev,feelliketemp:C.toFixed(2)}));
     // }
 
+
+    // const displayTemp = unitState === 'C' 
+    // ? (data.temp) .toFixed(2)
+    // : ((data.temp * 9/5) + 32).toFixed(2);
+
    return <>
    <div class='flex flex-col justify-center items-center h-full gap-3'>
 
@@ -72,7 +77,7 @@ function CurrentDisplay()
 
     <div class='text-blue-400 py-2'><I size={60}/></div>
 
-    <div class='text-white text-6xl font-medium py-2'>{data.temp}°</div>
+    <div class='text-white text-6xl font-medium py-2'>{unitState==='C' ? (data.temp) .toFixed(2) : ((data.temp * 9/5) + 32).toFixed(2) }°</div>
 
     {/* <div class='text-base text-gray-300 py-2'>{data.feel}</div> */}
 
@@ -80,23 +85,21 @@ function CurrentDisplay()
 
         <button 
         onClick={()=>{
-            setUnit('°C')
+            setUnit('C')
             setCBtnTxtClr('text-blue-400')
             setCbtnBG('bg-blue-950')
             setFBtnTxtClr('text-gray-300')
             setFbtnBG('bg-neutral-600')
-            changeToC()
 
         }} className={` ${CBtnTxtClr} ${CbtnBG} h-full w-1/2 rounded-l-2xl`}>°C</button>
 
         <button 
         onClick={()=>{
-            setUnit('°F')
+            setUnit('F')
             setCBtnTxtClr('text-gray-300')
             setCbtnBG('bg-neutral-600')
             setFBtnTxtClr('text-blue-400')
             setFbtnBG('bg-blue-950')
-            changeToF();
             // console.log()
         }} 
         className={`${FBtnTxtClr} ${FbtnBG} h-full w-1/2 rounded-r-2xl`}>°F</button>
