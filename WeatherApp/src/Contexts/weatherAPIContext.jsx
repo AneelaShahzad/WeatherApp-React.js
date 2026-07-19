@@ -6,7 +6,7 @@ export const WeatherData = createContext();
 function WeatherContext(props)
 {
     const obj={
-        city:'heeh',
+        city:'',
         country:'hehe',
         temp:'hehe',
         feelliketemp:'hehe',

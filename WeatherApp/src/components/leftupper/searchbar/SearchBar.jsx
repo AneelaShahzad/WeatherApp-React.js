@@ -2,10 +2,14 @@ import { Search } from "lucide-react";
 import { useState } from "react";
 import { useContext } from "react";
 import { WeatherData } from "../../../Contexts/weatherAPIContext";
+import { unitCon } from "../../../Contexts/UnitContext";
 
 function SearchBar()
 {
     const [weatherapidata,setWeatherapidata] = useContext(WeatherData)
+
+    const [unitstate,setUnit] = useContext(unitCon);
+    console.log(setUnit);
 
 
 
@@ -13,6 +17,8 @@ function SearchBar()
 
     const apiInACtion=async(cityName)=> {
         console.log(cityEntered);
+        // setUnit('C')
+
 
     let firstResponse = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${cityName}`)
     let firstResponseData = await firstResponse.json()

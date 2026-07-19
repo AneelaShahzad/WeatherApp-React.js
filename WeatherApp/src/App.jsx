@@ -1,10 +1,21 @@
 
+import { useContext, useEffect } from "react";
 import LeftUpper from "./components/leftupper/LeftUpper";
 import RightLower from "./components/rightlower/RightLower";
+import { WeatherData } from "./Contexts/weatherAPIContext";
+// import {[data,setData]} from "./Contexts/weatherAPIContext";
+
+import StartingUI from "./components/StartingUI";
 
 function App()
 {
 
+  const [data,setdata] = useContext(WeatherData)
+  console.log(data.city)
+  console.log('aneela');
+  // useEffect(()=>{
+  //   console.log('main hun use effect')
+  // })
 
 
   
@@ -31,8 +42,11 @@ function App()
 
 
 
-
-  return <>
+  if(data.city==='')
+  {
+    return <StartingUI/>
+  }
+   else return <>
   <div class='bg-neutral-900 h-screen p-10 flex flex-row'>
     <LeftUpper />
     <RightLower />
