@@ -1,5 +1,5 @@
 import {Search} from 'lucide-react'
-import SearchBar from './leftupper/searchbar/SearchBar';
+import SearchBar from './leftupper/SearchBar';
 function StartingUI()
 {
 

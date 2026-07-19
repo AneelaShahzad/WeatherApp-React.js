@@ -1,9 +1,9 @@
-import CurrentDisplay from "./currentdisplay/CurrentDisplay";
-import SearchBar from "./searchbar/SearchBar";
+import CurrentDisplay from "./CurrentDisplay";
+import SearchBar from "./SearchBar";
 
 function LeftUpper()
 {
-    return <div className="w-1/2  h-full">
+    return <div className="w-full lg:w-1/2  h-full">
         <SearchBar />
         <CurrentDisplay />
     </div>

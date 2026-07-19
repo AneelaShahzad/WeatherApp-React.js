@@ -1,17 +1,15 @@
-import ForecastPortion from "./forecastportion/ForecastPortion"
-import TodayPortion from "./todayportion/TodayPortion"
-import TodaysCard from "./TodaysCard/TodaysCard"
+// import ForecastPortion from "./forecastportion/ForecastPortion"
+// import ForecastPortion from "./ForecastPortion.jsx"
+import ForecastPortion from "./ForecastPortion"
+import TodayPortion from "./TodayPortion"
 
 function RightLower()
 {
     return <>
-    <div class='w-1/2 h-full'>
-
+    <div className='w-full lg:w-1/2 h-full'>
     <TodayPortion/>
-
-    <ForecastPortion />
-
-
+    <ForecastPortion/>
+    {/* <ForecastPortion /> */}
     </div>
     </>
 }

@@ -1,18 +1,14 @@
 import { useContext } from "react";
-import ForecastCard from "../ForecastCard/ForecastCard";
-import { WeatherData } from "../../../Contexts/weatherAPIContext";
-import { iconData } from "../../../Contexts/IconContext";
-
 import { Sun, Cloud, CloudRain, CloudSnow, CloudFog, CloudLightning } from "lucide-react";
+import ForecastCard from "./ForecastCard";
+import { WeatherData } from "../../Contexts/weatherAPIContext";
+import { iconData } from "../../Contexts/IconContext";
 
 function ForecastPortion()
 {
     const [weatherapidata] = useContext(WeatherData)
-    
-    // console.log(weatherapidata , 'forecast mein hun abhi');
     const  icontouse = useContext(iconData) 
     let I=icontouse[weatherapidata.weatherCode] || Sun;
-
 
     const forecastArr = [
         {
