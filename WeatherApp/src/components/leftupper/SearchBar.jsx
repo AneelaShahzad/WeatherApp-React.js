@@ -60,22 +60,22 @@ function SearchBar()
 
   return<>
 
-    <div class="flex w-fullpx-3 h-10 gap-3">
+    <div className="flex w-fullpx-3 h-10 gap-3">
 
         {/* --------search type------- */}
 
-      <div class='w-[80%] h-full'>
+      <div className='w-[80%] h-full'>
         <input 
             onChange={(e)=>{setCityEntered(e.target.value) }}
             placeholder="Enter a City" 
-            class="bg-neutral-600 h-full w-full rounded-md text-gray-100 text-lg
+            className="bg-neutral-600 h-full w-full rounded-md text-gray-100 text-lg
             font-medium placeholder:text-gray-50 px-3 py-2"/>
       </div>
 
          {/* -------------search icon--------- */}
       <button
         onClick={()=>{apiInACtion(cityEntered)}}
-        class="w-[15%] h-full border border-gray-200 bg-neutral-600 rounded-md py-1
+        className="w-[15%] h-full border border-gray-200 bg-neutral-600 rounded-md py-1
         text-gray-100 text-lg
         font-medium flex items-center justify-center">
             <Search/>

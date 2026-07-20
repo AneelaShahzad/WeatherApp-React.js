@@ -4,15 +4,21 @@ import { Wind } from "lucide-react";
 import { Sunset } from "lucide-react";
 import { useContext } from "react";
 import { WeatherData } from "../../Contexts/weatherAPIContext";
+import UnitContext, { unitCon } from "../../Contexts/UnitContext";
 
 function TodayPortion()
 {
+    let [unitState]=useContext(unitCon)
+    
     let [properties,setproperties] = useContext(WeatherData)
+
+    let f=unitState==='C'?(properties.feelliketemp).toFixed(2):((properties.feelliketemp * 9/5) + 32).toFixed(2)
     const todayArr=[
     {
         icon:Thermometer,
         property:'Feels like',
-        propertyVal:properties.feelliketemp
+        // propertyVal:properties.feelliketemp
+        propertyVal:f
     },
     {
         icon:Wind,
